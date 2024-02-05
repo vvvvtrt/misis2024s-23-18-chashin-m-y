@@ -1,0 +1,5 @@
+C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y/out/build/x64-debug/misis2024s-23-18-chashin-m-y/CMakeFiles/misis2024s-23-18-chashin-m-y.dir
+C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y/out/build/x64-debug/misis2024s-23-18-chashin-m-y/CMakeFiles/edit_cache.dir
+C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y/out/build/x64-debug/misis2024s-23-18-chashin-m-y/CMakeFiles/rebuild_cache.dir
