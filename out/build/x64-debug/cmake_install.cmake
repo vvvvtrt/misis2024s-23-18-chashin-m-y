@@ -33,9 +33,13 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y/out/build/x64-debug/misis2024s-23-18-chashin-m-y/cmake_install.cmake")
+  # Include the install script for the subdirectory.
+  include("C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y/out/build/x64-debug/prj.lab/cmake_install.cmake")
+endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y/out/build/x64-debug/prj.test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

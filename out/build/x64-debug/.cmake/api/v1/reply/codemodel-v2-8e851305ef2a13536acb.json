@@ -1,0 +1,190 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "prj.lab",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-prj.lab-Debug-02d5af99ecd44d686785.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "prj.lab"
+				},
+				{
+					"build" : "prj.lab/complex",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-prj.lab.complex-Debug-0a9f5c08cf76a0fecd18.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "prj.lab/complex",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "prj.lab/rational",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-prj.lab.rational-Debug-f31be889838ebfe626c7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "prj.lab/rational",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "prj.lab/dynarr",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-prj.lab.dynarr-Debug-50481e627ad695dd121f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "prj.lab/dynarr",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "prj.test",
+					"jsonFile" : "directory-prj.test-Debug-8d06470f3d57bfdcb843.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "prj.test",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "misis2024s-23-18-chashin-m-y",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "complex::@f01986494a78af0cc1db",
+					"jsonFile" : "target-complex-Debug-8afd0458003de80fe22f.json",
+					"name" : "complex",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "dynarr::@0ea11cdcf82ac2213dcb",
+					"jsonFile" : "target-dynarr-Debug-f38eb885e6beabfcfe23.json",
+					"name" : "dynarr",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rational::@fd4f4962d1a8e6d13fee",
+					"jsonFile" : "target-rational-Debug-84c342386ed9457aa79c.json",
+					"name" : "rational",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "test_complex::@03e42033715ba8c02d37",
+					"jsonFile" : "target-test_complex-Debug-63e8d8bea6ec91ea33a2.json",
+					"name" : "test_complex",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "test_dynarr::@03e42033715ba8c02d37",
+					"jsonFile" : "target-test_dynarr-Debug-1a6f607a37459b2372dc.json",
+					"name" : "test_dynarr",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "test_rational::@03e42033715ba8c02d37",
+					"jsonFile" : "target-test_rational-Debug-ec7de631ce64d7b93c97.json",
+					"name" : "test_rational",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y/out/build/x64-debug",
+		"source" : "C:/Users/sleim/source/repos/misis2024s-23-18-chashin-m-y"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
