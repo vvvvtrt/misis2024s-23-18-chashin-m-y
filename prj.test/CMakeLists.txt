@@ -18,3 +18,5 @@ target_link_libraries(test_dynarr dynarr)
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_dynarr)
 
+
+
