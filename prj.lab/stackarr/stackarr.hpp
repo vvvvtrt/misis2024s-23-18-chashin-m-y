@@ -5,15 +5,14 @@
 #include<algorithm>
 #include<complex/complex.hpp>
 
-class Stack {
+class StackArr {
 public:
-	Stack() = default;
-	Stack(const Stack& s);
-	Stack(std::ptrdiff_t size);
+	StackArr() = default;
+	StackArr(const StackArr& s);
 
-	~Stack() = default;
+	~StackArr() = default;
 
-	[[nodiscard]] Stack& operator=(const Stack& s) noexcept;
+	[[nodiscard]] StackArr& operator=(const StackArr& s) noexcept;
 
 	void Push(const Complex& num);
 	void Pop() noexcept;
@@ -24,7 +23,7 @@ private:
 	std::ptrdiff_t _size = 0;
 	std::ptrdiff_t _capacity = 0;
 
-	Complex* _data = new Complex[size_ + 1];
+	Complex* _data = new Complex[_size + 1];
 };
 
 #endif // !STACK_HPP
