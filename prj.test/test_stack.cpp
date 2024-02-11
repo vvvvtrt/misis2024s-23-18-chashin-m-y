@@ -11,7 +11,7 @@ TEST_CASE("stack ctor") {
 
 	CHECK_EQ(false, test.IsEmpty());
 	CHECK_EQ(test_num, test.Top());
-
+	
 	test.Pop();
 
 	CHECK_EQ(true, test.IsEmpty());

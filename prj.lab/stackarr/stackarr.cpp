@@ -23,18 +23,22 @@ StackArr& StackArr::operator=(const StackArr& s) noexcept {
 }
 
 void StackArr::Push(const Complex& num) {
-	if (_size < _capacity) {
-		_data[_size] = num;
-		_size++;
-	}
-	else {
+	if (_size >= _capacity) {
 		Complex* new_data = new Complex[_size + 10];
 		std::copy(_data, _data + _size, new_data);
 		delete[] _data;
 
-		_size += 1;
 		_capacity = _capacity + 10;
 		_data = new_data;
+	}
+
+	_data[_size] = num;
+	_size++;
+}
+
+void StackArr::Pop() noexcept {
+	if (_size > 0) {
+		_size--;
 	}
 }
 

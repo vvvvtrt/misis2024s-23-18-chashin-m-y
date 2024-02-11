@@ -10,7 +10,9 @@ public:
 	StackArr() = default;
 	StackArr(const StackArr& s);
 
-	~StackArr() = default;
+	~StackArr() {
+		delete[] _data;
+	}
 
 	[[nodiscard]] StackArr& operator=(const StackArr& s) noexcept;
 
@@ -18,6 +20,7 @@ public:
 	void Pop() noexcept;
 	bool IsEmpty() noexcept;
 	Complex& Top();
+	//std::ptrdiff_t size() { return _size; }
 
 private:
 	std::ptrdiff_t _size = 0;
