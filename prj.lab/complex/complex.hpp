@@ -16,7 +16,7 @@ struct Complex {
 
 	~Complex() = default;
 
-	Complex& operator=(const Complex&) = default;
+	Complex& operator=(const Complex& c) = default;
 
 	[[nodiscard]] bool operator==(const Complex& rhs) const { const constexpr int eps = 2 * std::numeric_limits<double>::epsilon(); return (std::abs(rhs.re - re) <= eps && std::abs(rhs.im - im) <= eps);}
 

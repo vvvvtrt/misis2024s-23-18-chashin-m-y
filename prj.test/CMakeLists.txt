@@ -19,11 +19,11 @@ target_link_libraries(test_dynarr dynarr)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_dynarr)
 
 
-add_executable(test_stack test_stack.cpp "test_stack.cpp")
+add_executable(test_stackarr test_stackarr.cpp "test_stackarr.cpp")
 
-target_link_libraries(test_stack stackarr)
-target_link_libraries(test_stack complex)
+target_link_libraries(test_stackarr stackarr)
+target_link_libraries(test_stackarr complex)
 
-set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_stack)
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_stackarr)
 
 
