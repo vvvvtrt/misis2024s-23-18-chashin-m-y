@@ -1,5 +1,5 @@
-CHECK: 20240212-172548
-ERROR: codeforces id is wrong
+CHECK: 20240216-071014
+OK: file codeforces.id is correct
 ERROR: folder misis2024s-23-18-chashin-m-y/prj.codeforces is absent
 ERROR: file prj.codeforces/CMakeLists.txt is absent
 OK: CMake generator successed
