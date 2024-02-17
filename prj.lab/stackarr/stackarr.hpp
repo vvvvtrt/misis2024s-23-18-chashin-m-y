@@ -1,5 +1,5 @@
-#ifndef STACK_HPP
-#define STACK_HPP
+#ifndef STACKARR_HPP
+#define STACKARR_HPP
 
 #include<iostream>
 #include<algorithm>
@@ -19,12 +19,12 @@ public:
 	void Push(const Complex& num);
 	void Pop() noexcept;
 	bool IsEmpty() noexcept;
-	Complex& Top();
-	//std::ptrdiff_t size() { return _size; }
+	[[nodiscard]] Complex& Top();
+	void Clear() noexcept;
 
 private:
 	std::ptrdiff_t _size = 0;
-	std::ptrdiff_t _capacity = 0;
+	std::ptrdiff_t i_top_ = 0;
 
 	Complex* _data = new Complex[_size + 1];
 };
