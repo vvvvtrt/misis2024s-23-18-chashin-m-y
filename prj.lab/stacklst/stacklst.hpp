@@ -15,7 +15,7 @@ public:
 	[[nodiscard]] StackLst& operator=(const StackLst& s) noexcept;
 
 	void Push(const Complex& num);
-	void Pop();
+	void Pop() noexcept;
 	[[nodiscard]] bool IsEmpty() noexcept;
 	[[nodiscard]] Complex& Top();
 	void Clear() noexcept;

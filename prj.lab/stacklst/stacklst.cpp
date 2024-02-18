@@ -20,10 +20,12 @@ void StackLst::Push(const Complex& num) {
 	head->next = copy;
 }
 
-void StackLst::Pop() {
-	Node* copy = head->next;
-	delete head;
-	head = copy;
+void StackLst::Pop() noexcept {
+	if (head != nullptr) {
+		Node copy = *head;
+		delete head;
+		head = copy.next;
+	}
 }
 
 Complex& StackLst::Top() {
@@ -39,13 +41,13 @@ bool StackLst::IsEmpty() noexcept {
 }
 
 void StackLst::Clear() noexcept {
-	while (IsEmpty()) {
+	while (! IsEmpty()) {
 		Pop();
 	}
 }
 
 StackLst::~StackLst() {
-	while (IsEmpty()) {
+	while (! IsEmpty()) {
 		Pop();
 	}
 }

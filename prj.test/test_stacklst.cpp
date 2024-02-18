@@ -9,9 +9,13 @@ TEST_CASE("stacklst ctor") {
 	test.Push(test_num);
 
 
-	/*CHECK_EQ(false, test.IsEmpty());
+	CHECK_EQ(false, test.IsEmpty());
 	CHECK_EQ(test_num, test.Top());
 	
 	StackLst test2(test);
-	CHECK_EQ(test2.Top(), test.Top());*/
+	CHECK_EQ(test2.Top(), test.Top());
+
+	test.Pop();
+
+	CHECK_EQ(true, test.IsEmpty());
 }
