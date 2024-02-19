@@ -1,3 +1,5 @@
+#pragma once
+#pragma once
 #ifndef DYNARR_HPP
 #define DYNARR_HPP
 

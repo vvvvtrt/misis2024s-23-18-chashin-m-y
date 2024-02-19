@@ -1,26 +1,26 @@
 #pragma once
-#ifndef STACKLST_HPP
-#define STACKLST_HPP
+#ifndef QUEUELST_HPP
+#define QUEUELST_HPP
 
 #include<iostream>
 #include<algorithm>
 #include<complex/complex.hpp>
 
-class StackLst {
+class QueueLst {
 public:
-	StackLst() = default;
-	StackLst(const StackLst& s);
+	QueueLst() = default;
+	QueueLst(const QueueLst& s);
 
-	~StackLst();
+	~QueueLst();
 
-	[[nodiscard]] StackLst& operator=(const StackLst& s) noexcept;
+	[[nodiscard]] QueueLst& operator=(const QueueLst& s) noexcept;
 
 	void Push(const Complex& num);
 	void Pop() noexcept;
 	[[nodiscard]] bool IsEmpty() noexcept;
 	[[nodiscard]] Complex& Top();
 	void Clear() noexcept;
-	
+
 
 private:
 	struct Node
@@ -28,10 +28,11 @@ private:
 		Complex val;
 		Node* next;
 
-		Node(const Complex& data) : val(data), next(nullptr) {}
+		Node(const Complex& data) : val(val), next(nullptr) {}
 	};
 
 	Node* head_ = nullptr;
+	Node* tail_ = nullptr;
 };
 
-#endif // !STACK_HPP
+#endif // !QUEUELST_HPP
