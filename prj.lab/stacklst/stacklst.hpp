@@ -29,6 +29,7 @@ private:
 		Node* next;
 
 		Node(const Complex& data) : val(data), next(nullptr) {}
+		~Node() = default;
 	};
 
 	Node* head_ = nullptr;

@@ -8,10 +8,10 @@
 
 class QueueLst {
 public:
-	QueueLst() = default;
-	QueueLst(const QueueLst& s);
+	[[nodiscard]] QueueLst() = default;
+	[[nodiscard]] QueueLst(const QueueLst& s);
 
-	~QueueLst();
+	[[nodiscard]] ~QueueLst();
 
 	[[nodiscard]] QueueLst& operator=(const QueueLst& s) noexcept;
 
@@ -28,7 +28,8 @@ private:
 		Complex val;
 		Node* next;
 
-		Node(const Complex& data) : val(val), next(nullptr) {}
+		Node(const Complex& data) : val(data), next(nullptr) {}
+		~Node() = default;
 	};
 
 	Node* head_ = nullptr;
