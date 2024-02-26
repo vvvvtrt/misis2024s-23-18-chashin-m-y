@@ -1,1 +1,2 @@
-Работаю над идеей на данный момент
+installing vcpkg
+start learning opencv

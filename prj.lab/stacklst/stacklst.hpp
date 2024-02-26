@@ -8,8 +8,8 @@
 
 class StackLst {
 public:
-	StackLst() = default;
-	StackLst(const StackLst& s);
+	[[nodiscard]] StackLst() = default;
+	[[nodiscard]] StackLst(const StackLst& s);
 
 	~StackLst();
 
