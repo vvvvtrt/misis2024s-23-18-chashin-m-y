@@ -1,24 +1,28 @@
 #pragma once
-#pragma once
 #ifndef DYNARR_HPP
 #define DYNARR_HPP
 
 #include <iostream>
 #include <sstream>
 #include <algorithm>
-
+#include <cstddef>
+#include <iosfwd>
+#include <stdexcept>
 
 class DynArr {
 public:
-    DynArr() = default;
-    DynArr(const DynArr& d);
-    DynArr(std::ptrdiff_t size);
-    ~DynArr() { delete[] data_; }
+    [[nodiscard]] DynArr() = default;
+    [[nodiscard]] DynArr(const DynArr& d);
+    [[nodiscard]] explicit DynArr(std::ptrdiff_t size);
+    ~DynArr() {
+        delete[] data_;
+        data_ = nullptr;
+    }
 
     [[nodiscard]] DynArr& operator=(const DynArr& d) noexcept;
 
-    [[nodiscard]] std::ptrdiff_t size() const noexcept;
-    void resize(std::ptrdiff_t size);
+    [[nodiscard]] std::ptrdiff_t Size() const noexcept;
+    void Resize(std::ptrdiff_t size);
 
     [[nodiscard]] float& operator[](const std::ptrdiff_t i);
     [[nodiscard]] const float& operator[](const std::ptrdiff_t i) const;
