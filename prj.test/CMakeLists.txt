@@ -28,6 +28,10 @@ target_link_libraries(test_queuelst queuelst)
 target_link_libraries(test_queuelst complex)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_queuelst)
 
+add_executable(test_queuelstptr test_queuelstptr.cpp "test_queuelstptr.cpp")
+target_link_libraries(test_queuelstptr queuelst)
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_queuelstptr)
+
 add_executable(test_queuearr test_queuearr.cpp "test_queuearr.cpp")
 # target_link_libraries(test_queuearr queuearr)
 target_link_libraries(test_queuearr complex)
