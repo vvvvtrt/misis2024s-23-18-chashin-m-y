@@ -1,4 +1,5 @@
-CHECK: 20240312-194203
+CHECK: 20240316-084641
+OK: file codeforces.id is correct
 STATUS: lab complex - test-ok
 STATUS: lab complex_io - test-ok
 STATUS: lab complex_m - test-ok
