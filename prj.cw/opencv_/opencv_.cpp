@@ -6,6 +6,8 @@
 using namespace cv;
 using namespace std;
 
+///////////////  Basic Functions  //////////////////////
+
 
 void getContours(Mat imgDil, Mat img) {
 
@@ -54,7 +56,6 @@ void getContours(Mat imgDil, Mat img) {
 int main() {
 	cv::VideoCapture cap(0); // 0 - индекс камеры
 
-	// проверка на успешность инициализации
 	if (!cap.isOpened()) {
 		std::cerr << "Error: Could not open camera" << std::endl;
 		return -1;

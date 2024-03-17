@@ -4,7 +4,7 @@ bool QueueLstPtr::IsEmpty() noexcept {
 	return head_ == nullptr;
 }
 
-void QueueLstPtr::Push(const float val) {
+void QueueLstPtr::Push(float val) {
 	if (IsEmpty()) {
 		head_ = new Node(val, nullptr);
 		return;
@@ -34,29 +34,29 @@ void QueueLstPtr::Push(const float val) {
 
 }
 
-void QueueLst::Pop() noexcept {
+void QueueLstPtr::Pop() noexcept {
 	if (head_ != nullptr) {
 		Node copy = *head_;
 		delete head_;
-		head_ = copy.next;
+		head_ = copy.next_;
 	}
 }
 
-Complex& QueueLst::Top() {
+float& QueueLstPtr::Top() {
 	if (head_ == nullptr) {
 		throw::std::logic_error("Stack of zero size");
 	}
 
-	return head_->val;
+	return head_->val_;
 }
 
-void QueueLst::Clear() noexcept {
+void QueueLstPtr::Clear() noexcept {
 	while (!IsEmpty()) {
 		Pop();
 	}
 }
 
-QueueLst::~QueueLst() {
+QueueLstPtr::~QueueLstPtr() {
 	while (!IsEmpty()) {
 		Pop();
 	}
@@ -65,20 +65,20 @@ QueueLst::~QueueLst() {
 QueueLstPtr::QueueLstPtr(const QueueLstPtr& q) {
 	Node* go_back_s = q.head_;
 
-	while (go_back_s->next != nullptr) {
-		Push(go_back_s->val);
-		go_back_s = go_back_s->next;
+	while (go_back_s->next_ != nullptr) {
+		Push(go_back_s->val_);
+		go_back_s = go_back_s->next_;
 	}
 }
 
 QueueLstPtr& QueueLstPtr::operator=(const QueueLstPtr& q) noexcept {
-	if (this * != q) {
 		Clear();
 		Node* go_back_s = q.head_;
 
-		while (go_back_s->next != nullptr) {
-			Push(go_back_s->val);
-			go_back_s = go_back_s->next;
+		while (go_back_s->next_ != nullptr) {
+			Push(go_back_s->val_);
+			go_back_s = go_back_s->next_;
 		}
-	}
+
+		return *this;
 }
