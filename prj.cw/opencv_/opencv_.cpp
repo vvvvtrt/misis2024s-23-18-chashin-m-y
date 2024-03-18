@@ -6,8 +6,6 @@
 using namespace cv;
 using namespace std;
 
-///////////////  Basic Functions  //////////////////////
-
 
 void getContours(Mat imgDil, Mat img) {
 
