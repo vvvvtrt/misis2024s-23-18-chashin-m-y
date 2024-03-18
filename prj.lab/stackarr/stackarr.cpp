@@ -1,54 +1,54 @@
 #include "stackarr.hpp"
 
 StackArr::StackArr(const StackArr& s) {
-	Complex* new_data = new Complex[s.i_top_];
-	std::copy(s._data, s._data + s._size, new_data);
-	delete[] _data;
+	Complex* newdata_ = new Complex[s.i_top_];
+	std::copy(s.data_, s.data_ + s.size_, newdata_);
+	delete[] data_;
 	
-	_size = s._size;
+	size_ = s.size_;
 	i_top_ = s.i_top_;
-	_data = new_data;
+	data_ = newdata_;
 }
 
 StackArr& StackArr::operator=(const StackArr& s) noexcept {
-	Complex* new_data = new Complex[s.i_top_];
-	std::copy(s._data, s._data + s._size, new_data);
-	delete[] _data;
+	Complex* newdata_ = new Complex[s.i_top_];
+	std::copy(s.data_, s.data_ + s.size_, newdata_);
+	delete[] data_;
 
-	_size = s._size;
+	size_ = s.size_;
 	i_top_ = s.i_top_;
-	_data = new_data;
+	data_ = newdata_;
 
 	return *this;
 }
 
 void StackArr::Push(const Complex& num) {
-	if (_size >= i_top_) {
-		Complex* new_data = new Complex[_size * 2];
-		std::copy(_data, _data + _size, new_data);
-		delete[] _data;
+	if (size_ >= i_top_) {
+		Complex* newdata_ = new Complex[size_ * 2];
+		std::copy(data_, data_ + size_, newdata_);
+		delete[] data_;
 
 		i_top_ = i_top_ * 2;
-		_data = new_data;
+		data_ = newdata_;
 	}
 
-	_data[_size] = num;
-	_size++;
+	data_[size_] = num;
+	size_++;
 }
 
 void StackArr::Pop() noexcept {
-	if (_size > 0) {
-		_size--;
+	if (size_ > 0) {
+		size_--;
 	}
 }
 
 bool StackArr::IsEmpty() noexcept {
-	return not(static_cast<bool>(_size));
+	return not(static_cast<bool>(size_));
 }
 
 Complex& StackArr::Top() {
-	if (_size) {
-		return _data[_size - 1];
+	if (size_) {
+		return data_[size_ - 1];
 	}
 	else {
 		throw::std::invalid_argument("Stack of zero size");
@@ -56,8 +56,8 @@ Complex& StackArr::Top() {
 }
 
 const Complex& StackArr::Top() const {
-	if (_size) {
-		return _data[_size - 1];
+	if (size_) {
+		return data_[size_ - 1];
 	}
 	else {
 		throw::std::invalid_argument("Stack of zero size");

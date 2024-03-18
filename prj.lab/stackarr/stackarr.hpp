@@ -25,10 +25,10 @@ public:
 	void Clear() noexcept;
 
 private:
-	std::ptrdiff_t _size = 0;
+	std::ptrdiff_t size_ = 0;
 	std::ptrdiff_t i_top_ = 0;
 
-	Complex* _data = new Complex[_size + 1];
+	Complex* data_ = new Complex[size_ + 1];
 };
 
 #endif // !STACK_HPP
