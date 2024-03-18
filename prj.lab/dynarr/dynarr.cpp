@@ -7,6 +7,12 @@ DynArr::DynArr(const DynArr& d) {
     std::copy(d.data_, d.data_ + d.size_, data_);
 }
 
+DynArr::DynArr(DynArr&& src) noexcept {
+    std::swap(capacity_, src.capacity_);
+    std::swap(size_, src.size_);
+    std::swap(data_, src.data_);
+}
+
 DynArr::DynArr(const std::ptrdiff_t size) {
     if (size > 0) {
         size_ = size;
@@ -37,6 +43,15 @@ DynArr& DynArr::operator=(const DynArr& d) noexcept {
         size_ = d.size_;
         return *this;
     }
+}
+
+DynArr& DynArr::DynArr::operator=(DynArr&& src) noexcept {
+    if (this != &src) {
+        std::swap(capacity_, src.capacity_);
+        std::swap(size_, src.size_);
+        std::swap(data_, src.data_);
+    }
+    return *this;
 }
 
 float& DynArr::operator[](const std::ptrdiff_t i) {

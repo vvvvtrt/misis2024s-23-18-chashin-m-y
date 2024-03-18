@@ -14,12 +14,14 @@ public:
     [[nodiscard]] DynArr() = default;
     [[nodiscard]] DynArr(const DynArr& d);
     [[nodiscard]] explicit DynArr(std::ptrdiff_t size);
+    [[nodiscard]] DynArr(DynArr&& src) noexcept;
     ~DynArr() {
         delete[] data_;
         data_ = nullptr;
     }
 
-    [[nodiscard]] DynArr& operator=(const DynArr& d) noexcept;
+    DynArr& operator=(const DynArr& d) noexcept;
+    DynArr& operator=(DynArr&&) noexcept;
 
     [[nodiscard]] std::ptrdiff_t Size() const noexcept;
     void Resize(std::ptrdiff_t size);
