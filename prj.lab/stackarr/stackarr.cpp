@@ -55,6 +55,15 @@ Complex& StackArr::Top() {
 	}
 }
 
+const Complex& StackArr::Top() const {
+	if (_size) {
+		return _data[_size - 1];
+	}
+	else {
+		throw::std::invalid_argument("Stack of zero size");
+	}
+}
+
 void StackArr::Clear() noexcept {
 	i_top_ = 0;
 }

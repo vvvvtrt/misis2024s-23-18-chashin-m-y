@@ -8,10 +8,10 @@
 
 class StackArr {
 public:
-	StackArr() = default;
-	StackArr(const StackArr& s);
+	[[nodiscard]] StackArr() = default;
+	[[nodiscard]] StackArr(const StackArr& s);
 
-	~StackArr() {
+	[[nodiscard]] ~StackArr() {
 		delete[] _data;
 	}
 
@@ -19,8 +19,9 @@ public:
 
 	void Push(const Complex& num);
 	void Pop() noexcept;
-	bool IsEmpty() noexcept;
+	[[nodiscard]] bool IsEmpty() noexcept;
 	[[nodiscard]] Complex& Top();
+	[[nodiscard]] const Complex& Top() const;
 	void Clear() noexcept;
 
 private:
