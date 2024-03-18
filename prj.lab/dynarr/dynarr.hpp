@@ -21,7 +21,7 @@ public:
     }
 
     DynArr& operator=(const DynArr& d) noexcept;
-    DynArr& operator=(DynArr&&) noexcept;
+    DynArr& operator=(DynArr&& src) noexcept;
 
     [[nodiscard]] std::ptrdiff_t Size() const noexcept;
     void Resize(std::ptrdiff_t size);

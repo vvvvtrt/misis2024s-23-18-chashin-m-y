@@ -24,11 +24,11 @@ StackArr& StackArr::operator=(const StackArr& s) noexcept {
 
 void StackArr::Push(const Complex& num) {
 	if (_size >= i_top_) {
-		Complex* new_data = new Complex[_size + 10];
+		Complex* new_data = new Complex[_size * 2];
 		std::copy(_data, _data + _size, new_data);
 		delete[] _data;
 
-		i_top_ = i_top_ + 10;
+		i_top_ = i_top_ * 2;
 		_data = new_data;
 	}
 
