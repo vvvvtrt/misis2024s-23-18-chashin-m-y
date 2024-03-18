@@ -11,9 +11,11 @@ public:
 	[[nodiscard]] StackLst() = default;
 	[[nodiscard]] StackLst(const StackLst& s);
 
+
 	~StackLst();
 
 	[[nodiscard]] StackLst& operator=(const StackLst& s) noexcept;
+	StackLst& operator=(StackLst&& src) noexcept;
 
 	void Push(const Complex& num);
 	void Pop() noexcept;
