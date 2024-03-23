@@ -12,7 +12,7 @@ public:
 	[[nodiscard]] StackArr(const StackArr& s);
 
 	[[nodiscard]] ~StackArr() {
-		delete[] _data;
+		delete[] data_;
 	}
 
 	[[nodiscard]] StackArr& operator=(const StackArr& s) noexcept;
@@ -26,9 +26,9 @@ public:
 
 private:
 	std::ptrdiff_t size_ = 0;
-	std::ptrdiff_t i_top_ = 0;
+	std::ptrdiff_t i_top_ = -1;
 
-	Complex* data_ = new Complex[size_ + 1];
+	Complex* data_ = nullptr;
 };
 
 #endif // !STACK_HPP

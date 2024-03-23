@@ -10,6 +10,7 @@ class StackLst {
 public:
 	[[nodiscard]] StackLst() = default;
 	[[nodiscard]] StackLst(const StackLst& s);
+	[[nodiscard]] StackLst(StackLst&& src) noexcept;
 
 
 	~StackLst();

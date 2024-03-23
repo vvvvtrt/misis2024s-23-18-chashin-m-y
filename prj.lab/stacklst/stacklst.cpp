@@ -1,6 +1,7 @@
 #include "stacklst.hpp"
 
 
+
 StackLst::StackLst(const StackLst& s) {
 	Node* go_back_s = s.head_;
 	head_ = new Node(go_back_s->val);
@@ -69,6 +70,12 @@ StackLst& StackLst::operator=(const StackLst& s) noexcept {
 }
 
 StackLst& StackLst::operator=(StackLst&& src) noexcept {
-	std::swap(head_, src.head_);
+	if (this != &src) {
+		std::swap(head_, src.head_);
+	}
 	return *this;
+}
+
+StackLst::StackLst(StackLst&& src) noexcept {
+	std::swap(head_, src.head_);
 }
