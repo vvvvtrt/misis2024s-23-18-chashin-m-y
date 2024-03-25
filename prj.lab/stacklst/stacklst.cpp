@@ -37,6 +37,14 @@ Complex& StackLst::Top() {
 	return head_->val;
 }
 
+const Complex& StackLst::Top() const {
+	if (head_ == nullptr) {
+		throw::std::logic_error("Stack of zero size");
+	}
+
+	return head_->val;
+}
+
 bool StackLst::IsEmpty() noexcept {
 	return head_ == nullptr;
 }

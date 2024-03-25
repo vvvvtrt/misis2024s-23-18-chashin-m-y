@@ -15,11 +15,25 @@ public:
 
 	~BitSet() = default;
 
+	[[nodiscard]] bool operator==(const BitSet& rhs) const noexcept;
+
+	[[nodiscard]] bool operator!=(const BitSet& rhs) const noexcept;
+
+	int32_t Size() const noexcept { return size_; }
 	uint32_t GetSize() const noexcept;
 	void Resize(const uint32_t& n);
 	bool Get(const uint32_t& n);
 	void Set(const uint32_t& n, const bool b);
 	void Fill(const bool& b);
+	
+
+	[[nodiscard]] BitSet& operator&=(const BitSet& rhs);
+
+	[[nodiscard]] BitSet& operator|=(const BitSet& rhs);
+
+	[[nodiscard]] BitSet& operator^=(const BitSet& rhs);
+
+	[[nodiscard]] BitSet& operator~ = ();
 	
 private:
 	vector<uint32_t> bitset;

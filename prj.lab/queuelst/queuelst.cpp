@@ -9,6 +9,14 @@ Complex& QueueLst::Top() {
 	return head_->val;
 }
 
+const Complex& QueueLst::Top() const {
+	if (head_ == nullptr) {
+		throw::std::logic_error("Stack of zero size");
+	}
+
+	return head_->val;
+}
+
 bool QueueLst::IsEmpty() noexcept {
 	return head_ == nullptr;
 }
@@ -64,6 +72,20 @@ QueueLst& QueueLst::operator=(const QueueLst& s) noexcept {
 
 	return *this;
 }
+
+QueueLst& QueueLst::operator=(QueueLst&& rhs) noexcept {
+	if (this != &rhs) {
+		std::swap(head_, rhs.head_);
+		std::swap(tail_, rhs.tail_);
+	}
+	return *this;
+}
+
+QueueLst::QueueLst(QueueLst&& rhs) noexcept {
+	std::swap(head_, rhs.head_);
+	std::swap(tail_, rhs.tail_);
+}
+
 
 QueueLst::QueueLst(const QueueLst& s) {
 	Node* go_back_s = s.head_;

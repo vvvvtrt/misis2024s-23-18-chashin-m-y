@@ -2,33 +2,33 @@
 #ifndef STACKARR_HPP
 #define STACKARR_HPP
 
-#include<iostream>
-#include<algorithm>
-#include<complex/complex.hpp>
+#include <iostream>
+#include <algorithm>
+#include <cstddef>
+#include <memory>
+#include "complex/complex.hpp"
 
 class StackArr {
 public:
-	[[nodiscard]] StackArr() = default;
-	[[nodiscard]] StackArr(const StackArr& s);
+    [[nodiscard]] StackArr() = default;
+    [[nodiscard]] StackArr(const StackArr& rhs);
+    [[nodiscard]] StackArr(StackArr&& rhs) noexcept;
 
-	[[nodiscard]] ~StackArr() {
-		delete[] data_;
-	}
+    ~StackArr() = default;
+    [[nodiscard]] StackArr& operator=(const StackArr& rhs) noexcept;
+    [[nodiscard]] StackArr& operator=(StackArr&& rhs) noexcept;
 
-	[[nodiscard]] StackArr& operator=(const StackArr& s) noexcept;
-
-	void Push(const Complex& num);
-	void Pop() noexcept;
-	[[nodiscard]] bool IsEmpty() noexcept;
-	[[nodiscard]] Complex& Top();
-	[[nodiscard]] const Complex& Top() const;
-	void Clear() noexcept;
+    bool IsEmpty() const noexcept;
+    void Pop() noexcept;
+    void Push(const Complex& el);
+    [[nodiscard]] Complex& Top();
+    [[nodiscard]] const Complex& Top() const;
+    void Clear() noexcept;
 
 private:
-	std::ptrdiff_t size_ = 0;
-	std::ptrdiff_t i_top_ = -1;
-
-	Complex* data_ = nullptr;
+    std::ptrdiff_t size_ = 0;
+    std::ptrdiff_t i_top_ = -1;
+    std::unique_ptr<Complex[]> data_ = std::make_unique<Complex[]>(size_);
 };
 
-#endif // !STACK_HPP
+#endif

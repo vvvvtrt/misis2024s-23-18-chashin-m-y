@@ -16,12 +16,13 @@ public:
 	~StackLst();
 
 	[[nodiscard]] StackLst& operator=(const StackLst& s) noexcept;
-	StackLst& operator=(StackLst&& src) noexcept;
+	[[nodiscard]] StackLst& operator=(StackLst&& src) noexcept;
 
 	void Push(const Complex& num);
 	void Pop() noexcept;
 	[[nodiscard]] bool IsEmpty() noexcept;
 	[[nodiscard]] Complex& Top();
+	[[nodiscard]] const Complex& Top() const;
 	void Clear() noexcept;
 	
 
