@@ -1,43 +1,65 @@
 #ifndef BITSET_HPP
 #define BITSET_HPP
 
-#include <iostream>
 #include <vector>
+#include <algorithm>
 
 class BitSet {
 public:
-	[[nodiscard]] BitSet() = default;
-	[[nodiscard]] BitSet(const BitSet& src);
-	[[nodiscard]] BitSet(BitSet&& src);
+    BitSet() = default;
+    BitSet(const BitSet& rhs) = default;
+    BitSet(BitSet&& rhs) = default;
 
-	BitSet& operator=(const BitSet& src) noexcept;
-	BitSet& operator=(BitSet&& src) noexcept;
+    explicit BitSet(const std::int32_t size) : size_(size), bits_(size) {}
 
-	~BitSet() = default;
+    BitSet& operator=(const BitSet& rhs) = default;
+    BitSet& operator=(BitSet&& rhs) = default;
 
-	[[nodiscard]] bool operator==(const BitSet& rhs) const noexcept;
+    ~BitSet() = default;
 
-	[[nodiscard]] bool operator!=(const BitSet& rhs) const noexcept;
+    [[nodiscard]] bool operator==(const BitSet& rhs) const noexcept;
+    [[nodiscard]] bool operator!=(const BitSet& rhs) const noexcept;
 
-	int32_t Size() const noexcept { return size_; }
-	uint32_t GetSize() const noexcept;
-	void Resize(const uint32_t& n);
-	bool Get(const uint32_t& n);
-	void Set(const uint32_t& n, const bool b);
-	void Fill(const bool& b);
-	
 
-	[[nodiscard]] BitSet& operator&=(const BitSet& rhs);
+    std::int32_t Size() const noexcept { return size_; }
+    void Resize(const std::int32_t size);
+    void Fill(const bool val) noexcept;
+    [[nodiscard]] bool Get(const int32_t idx) const;
+    void Set(const int32_t idx, const bool val);
 
-	[[nodiscard]] BitSet& operator|=(const BitSet& rhs);
+    [[nodiscard]] BitSet operator~();
+    [[nodiscard]] BitSet& operator|=(const BitSet& rhs);
+    [[nodiscard]] BitSet& operator&=(const BitSet& rhs);
+    [[nodiscard]] BitSet& operator^=(const BitSet& rhs);
 
-	[[nodiscard]] BitSet& operator^=(const BitSet& rhs);
+    std::vector<std::uint32_t> same_size(const BitSet& v1, const BitSet& v2);
 
-	[[nodiscard]] BitSet& operator~ = ();
-	
 private:
-	vector<uint32_t> bitset;
+    class BiA {
+    public:
+        BiA(b, ind): b_(b), ind_(ind) {}
+        ~BiA() = default;
 
+        explicit operator bool();
+
+        bool operator=(const bool v);
+        const bool operator=(const bool v) const;
+
+        BiA& operator=(const BiA& v);
+        const BiA& operator=(const BiA& v) const;
+
+    private:
+        BitSet* b_ = nullptr;
+        int32_t ind_ = 0;
+    };
+
+    std::int32_t size_ = 0;
+    std::vector<std::uint32_t> bits_;
 };
 
-#endif // !BITSET_HPP
+[[nodiscard]] BitSet operator&(const BitSet& lhs, const BitSet& rhs);
+[[nodiscard]] BitSet operator|(const BitSet& lhs, const BitSet& rhs);
+[[nodiscard]] BitSet operator^(const BitSet& lhs, const BitSet& rhs);
+
+
+#endif
