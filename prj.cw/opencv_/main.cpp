@@ -89,6 +89,15 @@ private:
 	std::vector<Color> color_cube;
 };
 
+cv::Scalar calculateAverageRGB(cv::Mat image, cv::Point pt1, cv::Point pt2) {
+	cv::Rect roi(pt1, pt2);
+	cv::Mat region = image(roi);
+
+	cv::Scalar mean = cv::mean(region);
+
+	return mean;
+}
+
 void getContours(cv::Mat imgDil, cv::Mat img) {
 	std::vector<std::vector<cv::Point>> contours;
 	std::vector<cv::Vec4i> hierarchy;
