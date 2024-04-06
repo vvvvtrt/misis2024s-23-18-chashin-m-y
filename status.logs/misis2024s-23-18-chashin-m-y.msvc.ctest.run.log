@@ -1,0 +1,130 @@
+Internal ctest changing into directory: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/build.check
+Test project D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/build.check
+      Start  1: doctest_bitset
+Could not find executable D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset.exe
+Looked in the following places:
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset.exe.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_bitset.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_bitset.exe.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset.exe.exe
+ 1/20 Test  #1: doctest_bitset ...................***Not Run   0.00 sec
+      Start  2: doctest_bitset_m
+Could not find executable D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset_m.exe
+Looked in the following places:
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset_m.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset_m.exe.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_bitset_m.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_bitset_m.exe.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset_m.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset_m.exe.exe
+ 2/20 Test  #2: doctest_bitset_m .................***Not Run   0.00 sec
+      Start  3: doctest_complex
+      Start  4: doctest_complex_io
+      Start  5: doctest_complex_m
+      Start  6: doctest_rational
+      Start  7: doctest_rational_io
+      Start  8: doctest_rational_m
+      Start  9: doctest_dynarr
+      Start 10: doctest_dynarr_m
+      Start 11: doctest_queuearr
+Could not find executable D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe
+Looked in the following places:
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuearr.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuearr.exe.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe.exe
+ 3/20 Test #11: doctest_queuearr .................***Not Run   0.00 sec
+      Start 12: doctest_queuearr_m
+Could not find executable D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe
+Looked in the following places:
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuearr_m.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuearr_m.exe.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe.exe
+ 4/20 Test #12: doctest_queuearr_m ...............***Not Run   0.00 sec
+      Start 13: doctest_queuelst
+Could not find executable D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelst.exe
+Looked in the following places:
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelst.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelst.exe.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelst.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelst.exe.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelst.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelst.exe.exe
+ 5/20 Test #13: doctest_queuelst .................***Not Run   0.00 sec
+      Start 14: doctest_queuelst_m
+      Start 15: doctest_queuelstpr
+Could not find executable D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe
+Looked in the following places:
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelstpr.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelstpr.exe.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe.exe
+ 6/20 Test #15: doctest_queuelstpr ...............***Not Run   0.00 sec
+      Start 16: doctest_queuelstpr_m
+Could not find executable D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe
+Looked in the following places:
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelstpr_m.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelstpr_m.exe.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe.exe
+ 7/20 Test #16: doctest_queuelstpr_m .............***Not Run   0.00 sec
+      Start 17: doctest_stackarr
+Could not find executable D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe
+Looked in the following places:
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_stackarr.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_stackarr.exe.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe.exe
+ 8/20 Test #17: doctest_stackarr .................***Not Run   0.00 sec
+      Start 18: doctest_stackarr_m
+      Start 19: doctest_stacklst
+Could not find executable D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe
+Looked in the following places:
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_stacklst.exe
+D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_stacklst.exe.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe
+Release/D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe.exe
+ 9/20 Test #19: doctest_stacklst .................***Not Run   0.00 sec
+      Start 20: doctest_stacklst_m
+10/20 Test  #3: doctest_complex ..................   Passed    0.14 sec
+11/20 Test  #4: doctest_complex_io ...............   Passed    0.13 sec
+12/20 Test  #5: doctest_complex_m ................   Passed    0.11 sec
+13/20 Test  #6: doctest_rational .................   Passed    0.10 sec
+14/20 Test  #7: doctest_rational_io ..............   Passed    0.09 sec
+15/20 Test  #8: doctest_rational_m ...............   Passed    0.08 sec
+16/20 Test  #9: doctest_dynarr ...................   Passed    0.07 sec
+17/20 Test #10: doctest_dynarr_m .................***Failed    0.06 sec
+18/20 Test #14: doctest_queuelst_m ...............   Passed    0.04 sec
+19/20 Test #18: doctest_stackarr_m ...............   Passed    0.03 sec
+20/20 Test #20: doctest_stacklst_m ...............   Passed    0.02 sec
+
+50% tests passed, 10 tests failed out of 20
+
+Total Test time (real) =   0.17 sec
+
+The following tests FAILED:
+	  1 - doctest_bitset (Not Run)
+	  2 - doctest_bitset_m (Not Run)
+	 10 - doctest_dynarr_m (Failed)
+	 11 - doctest_queuearr (Not Run)
+	 12 - doctest_queuearr_m (Not Run)
+	 13 - doctest_queuelst (Not Run)
+	 15 - doctest_queuelstpr (Not Run)
+	 16 - doctest_queuelstpr_m (Not Run)
+	 17 - doctest_stackarr (Not Run)
+	 19 - doctest_stacklst (Not Run)

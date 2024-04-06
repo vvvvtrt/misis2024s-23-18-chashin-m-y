@@ -1,0 +1,12 @@
+Unable to find executable: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset.exe
+Unable to find executable: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_bitset_m.exe
+Unable to find executable: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe
+Unable to find executable: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe
+Unable to find executable: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelst.exe
+Unable to find executable: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe
+Unable to find executable: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe
+Unable to find executable: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe
+Unable to find executable: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe
+Errors while running CTest
+Output from these tests are in: D:/.dima/misis2023f-23-check/misis2024s-23-18-chashin-m-y/build.check/Testing/Temporary/LastTest.log
+Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.
