@@ -103,31 +103,31 @@ BitSet operator^(const BitSet& lhs, const BitSet& rhs) {
     return result;
 }
 
-bool operator[](const int32_t& rhs) {
+BitSet::BiA* operator[](const int32_t& rhs) {
     BiA temp = BiA(*this, rhs);
     return *temp
 }
 
 BitSet::BiA::operator bool() {
-    return static_cast<bool>(b_->bits_[i_]);
+    return static_cast<bool>(b_->bits_[ind_]);
 }
 
 bool BitSet::BiA::operator=(const bool v) {
-    b_->bits_[i_] = v;
+    b_->bits_[ind_] = v;
     return bool(*this)
 }
 
 const bool BitSet::BiA::operator=(const bool v) const {
-    b_->bits_[i_] = v;
+    b_->bits_[ind_] = v;
     return bool(*this)
 }
 
 BitSet::BiA& BitSet::BiA::operator=(const BiA& v) {
-    b_->bits_ = v->b_->bits_;
+    b_->bits_ = v.b_->bits_;
     return *this
 }
 
 const BitSet::BiA& BitSet::BiA::operator=(const BiA& v) const {
-    b_->bits_[i_] = v->b_->bits_[v->i_];
+    b_->bits_[ind_] = v.b_->bits_[v.ind_];
     return *this
 }

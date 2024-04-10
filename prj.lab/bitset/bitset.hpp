@@ -1,8 +1,11 @@
 #ifndef BITSET_HPP
 #define BITSET_HPP
 
+#include <iostream>
+#include <cstdint>
 #include <vector>
 #include <algorithm>
+#include <stdexcept>
 
 class BitSet {
 public:
@@ -20,6 +23,7 @@ public:
     [[nodiscard]] bool operator==(const BitSet& rhs) const noexcept;
     [[nodiscard]] bool operator!=(const BitSet& rhs) const noexcept;
 
+    BiA operator[](const int32_t& rhs)
 
     std::int32_t Size() const noexcept { return size_; }
     void Resize(const std::int32_t size);
@@ -37,7 +41,7 @@ public:
 private:
     class BiA {
     public:
-        BiA(b, ind): b_(b), ind_(ind) {}
+        BiA(BitSet* b, int32_t ind): b_(b), ind_(ind) {}
         ~BiA() = default;
 
         explicit operator bool();
