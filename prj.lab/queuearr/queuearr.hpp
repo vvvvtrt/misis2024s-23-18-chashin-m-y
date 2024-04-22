@@ -1,38 +1,41 @@
 #pragma once
+
 #ifndef QUEUEARR_HPP
 #define QUEUEARR_HPP
 
-#include<iostream>
-#include<algorithm>
-#include<complex/complex.hpp>
+#include <complex/complex.hpp>
+
+#include <cstddef>
+#include <memory>
 
 class QueueArr {
 public:
-	[[nodiscard]] QueueArr() = default;
-	[[nodiscard]] QueueArr(const QueueArr& rhs);
-	[[nodiscard]] QueueArr(QueueArr&& d) noexcept;
+	QueueArr() = default;
+	QueueArr(const QueueArr& rhs);
+	QueueArr(QueueArr&& rhs) noexcept;
 
-	[[nodiscard]] ~QueueArr() = default;
+	~QueueArr();
 
-	[[nodiscard]] QueueArr& operator=(const QueueArr& rhs) noexcept;
-	[[nodiscard]] QueueArr& operator=(QueueArr&& d) noexcept;
+	QueueArr& operator=(const QueueArr& rhs);
+	QueueArr& operator=(QueueArr&& rhs) noexcept;
 
-	void Push(const Complex& c);
+	bool IsEmpty() const noexcept;
+
 	void Pop() noexcept;
 
-	[[nodiscard]] bool IsEmpty() noexcept;
-	[[nodiscard]] Complex& Top();
-	[[nodiscard]] const Complex& Top() const;
+	void Push(const Complex& val);
+
+	Complex& Top();
+	const Complex& Top() const;
 
 	void Clear() noexcept;
-	std::ptrdiff_t Count() const;
+
 private:
+	std::unique_ptr<Complex[]> data_ = nullptr;
+	std::ptrdiff_t size_ = 0;
 	std::ptrdiff_t head_ = -1;
 	std::ptrdiff_t tail_ = -1;
-
-	std::ptrdiff_t capacity_ = 0;
-
-	std::unique_ptr<Complex[]> data_ = std::make_unique<Complex[]>(capacity_);
+	std::ptrdiff_t Count() const;
 };
 
-#endif // !QUEUEARR_HPP
+#endif

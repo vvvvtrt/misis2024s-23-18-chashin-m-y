@@ -1,42 +1,42 @@
 #pragma once
+
 #ifndef STACKLST_HPP
 #define STACKLST_HPP
 
-#include<iostream>
-#include<algorithm>
-#include<complex/complex.hpp>
+#include <complex/complex.hpp>
+
+#include <cstddef>
+#include <memory>
 
 class StackLst {
 public:
-	[[nodiscard]] StackLst() = default;
-	[[nodiscard]] StackLst(const StackLst& s);
-	[[nodiscard]] StackLst(StackLst&& src) noexcept;
+    StackLst() = default;
+    StackLst(const StackLst& rhs);
+    StackLst(StackLst&& rhs) noexcept;
 
+    ~StackLst();
 
-	~StackLst();
+    StackLst& operator=(const StackLst& rhs);
+    StackLst& operator=(StackLst&& rhs) noexcept;
 
-	[[nodiscard]] StackLst& operator=(const StackLst& s) noexcept;
-	[[nodiscard]] StackLst& operator=(StackLst&& src) noexcept;
+    bool IsEmpty() const noexcept;
 
-	void Push(const Complex& num);
-	void Pop() noexcept;
-	[[nodiscard]] bool IsEmpty() noexcept;
-	[[nodiscard]] Complex& Top();
-	[[nodiscard]] const Complex& Top() const;
-	void Clear() noexcept;
-	
+    void Pop() noexcept;
+
+    void Push(const Complex& val);
+
+    Complex& Top();
+    const Complex& Top() const;
+
+    void Clear() noexcept;
 
 private:
-	struct Node
-	{
-		Complex val;
-		Node* next;
-
-		Node(const Complex& data) : val(data), next(nullptr) {}
-		~Node() = default;
-	};
-
-	Node* head_ = nullptr;
+    struct Node {
+        Complex data;
+        std::unique_ptr<Node> next;
+        Node(Complex v) : data(v), next(nullptr) {}
+    };
+    std::unique_ptr<Node> head;
 };
 
-#endif // !STACK_HPP
+#endif
