@@ -1,4 +1,5 @@
-add_library(stackarr stackarr.cpp stackarr.hpp)
+add_library(stackarr stackarr.hpp stackarr.cpp)
+target_link_libraries(stackarr complex)
 set_property(TARGET stackarr PROPERTY CXX_STANDARD 20)
 target_include_directories(stackarr PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>
