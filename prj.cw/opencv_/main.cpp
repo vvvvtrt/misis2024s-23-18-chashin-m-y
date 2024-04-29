@@ -6,13 +6,13 @@
 
 enum class Color { RED, GREEN, BLUE, WHITE, YELLOW, ORANGE };
 
-struct —ircuit {
-	—ircuit(int ar, cv::Rect st, cv::Rect en) : area(ar), start(st), end(en) {}
-	~—ircuit() = default;
+struct Circuit {
+	Circuit(int ar, cv::Point st, cv::Point en): area(ar), start(st), end(en) {}
+	~Circuit() = default;
 
 	int area;
-	cv::Rect start;
-	cv::Rect end;
+	cv::Point start;
+	cv::Point end;
 };
 
 class Detected {
@@ -21,7 +21,7 @@ public:
 	~Detected() = default;
 
 	void Snapshot(std::string& path) {
-		cv::VideoCapture cap(0);
+		cv::VideoCapture cap(0); 
 
 		if (!cap.isOpened()) {
 			std::cerr << "Error: Could not open camera" << std::endl;
@@ -45,14 +45,13 @@ public:
 		std::vector<std::vector<cv::Point>> conPoly(contours.size());
 		std::vector<cv::Rect> boundRect(contours.size());
 
-		std::vector<—ircuit> arr_a;
+		std::vector<Circuit> arr_a;
 
 		for (int i = 0; i < contours.size(); i++)
 		{
 			int area = contourArea(contours[i]);
 			std::cout << area << std::endl;
 			std::string objectType;
-			std::cout << "cord " << contours[i][0] << '\n';
 
 			if (area > 2000)
 			{
@@ -60,7 +59,9 @@ public:
 				approxPolyDP(contours[i], conPoly[i], 0.02 * peri, true);
 				std::cout << conPoly[i].size() << std::endl;
 				boundRect[i] = boundingRect(conPoly[i]);
-				std::cout << "cord" << boundRect[i] << '\n';
+
+				Circuit temp(area, boundRect[i].tl(), boundRect[i].br());
+				arr_detect.push_back(temp);
 
 				int objCor = (int)conPoly[i].size();
 
@@ -82,85 +83,29 @@ public:
 				cv::circle(img, cv::Point(426, 317 + 114), 5, cv::Scalar(0, 0, 255), -1);
 			}
 		}
+
 	}
+	
 
 private:
-	std::vector<—ircuit> arr_detect;
+	std::vector<Circuit> arr_detect;
 	std::vector<Color> color_cube;
 };
 
-cv::Scalar calculateAverageRGB(cv::Mat image, cv::Point pt1, cv::Point pt2) {
-	cv::Rect roi(pt1, pt2);
-	cv::Mat region = image(roi);
-
-	cv::Scalar mean = cv::mean(region);
-
-	return mean;
-}
-
-void getContours(cv::Mat imgDil, cv::Mat img) {
-	std::vector<std::vector<cv::Point>> contours;
-	std::vector<cv::Vec4i> hierarchy;
-
-	findContours(imgDil, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
-	//drawContours(img, contours, -1, Scalar(255, 0, 255), 2);
-
-	std::vector<std::vector<cv::Point>> conPoly(contours.size());
-	std::vector<cv::Rect> boundRect(contours.size());
-
-	std::vector<—ircuit> arr_a;
-
-	for (int i = 0; i < contours.size(); i++)
-	{
-		int area = contourArea(contours[i]);
-		std::cout << area << std::endl;
-		std::string objectType;
-		std::cout << "cord " << contours[i][0] << '\n';
-
-		if (area > 2000)
-		{
-			float peri = arcLength(contours[i], true);
-			approxPolyDP(contours[i], conPoly[i], 0.02 * peri, true);
-			std::cout << conPoly[i].size() << std::endl;
-			boundRect[i] = boundingRect(conPoly[i]);
-			std::cout << "cord" << boundRect[i] << '\n';
-
-			int objCor = (int)conPoly[i].size();
-
-			if (objCor == 3) { objectType = "Tri"; }
-			else if (objCor == 4)
-			{
-				float aspRatio = (float)boundRect[i].width / (float)boundRect[i].height;
-				std::cout << aspRatio << std::endl;
-				if (aspRatio > 0.95 && aspRatio < 1.05) { objectType = "Square"; }
-				else { objectType = "Rect"; }
-			}
-			else if (objCor > 4) { objectType = "Circle"; }
-
-			drawContours(img, conPoly, i, cv::Scalar(255, 0, 255), 2);
-			rectangle(img, boundRect[i].tl(), boundRect[i].br(), cv::Scalar(0, 255, 0), 5);
-			//line(img, {1, 1}, boundRect[i].br(), Scalar(0, 255, 0), 1);
-			putText(img, objectType, { boundRect[i].x,boundRect[i].y - 5 }, cv::FONT_HERSHEY_PLAIN, 1, cv::Scalar(0, 69, 255), 2);
-			cv::circle(img, cv::Point(304, 317), 5, cv::Scalar(0, 0, 255), -1);
-			cv::circle(img, cv::Point(426, 317 + 114), 5, cv::Scalar(0, 0, 255), -1);
-		}
-	}
-}
-
 
 int main() {
-	cv::VideoCapture cap(0); // 0 - ËÌ‰ÂÍÒ Í‡ÏÂ˚
+	cv::VideoCapture cap(0); // 0 - –∏–Ω–¥–µ–∫—Å –∫–∞–º–µ—Ä—ã
 
 	if (!cap.isOpened()) {
 		std::cerr << "Error: Could not open camera" << std::endl;
 		return -1;
 	}
 
-	// Ò˜ËÚ˚‚‡ÌËÂ Í‡‰‡ Ò Í‡ÏÂ˚
+	// —Å—á–∏—Ç—ã–≤–∞–Ω–∏–µ –∫–∞–¥—Ä–∞ —Å –∫–∞–º–µ—Ä—ã
 	cv::Mat frame;
 	cap >> frame;
 
-	// ÒÓı‡ÌÂÌËÂ Í‡‰‡ ‚ Ù‡ÈÎ
+	// —Å–æ—Ö—Ä–∞–Ω–µ–Ω–∏–µ –∫–∞–¥—Ä–∞ –≤ —Ñ–∞–π–ª
 	//cv::imwrite("Resources/test.jpg", frame);
 	cap.release();
 
@@ -176,7 +121,9 @@ int main() {
 	cv::Mat kernel = getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
 	dilate(imgCanny, imgDil, kernel);
 
-	getContours(imgDil, img);
+	Detected temp;
+	temp.Recognition(imgDil, img);
+
 
 	imshow("Image", img);
 	//imshow("Image Gray", imgGray);
