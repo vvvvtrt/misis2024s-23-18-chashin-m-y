@@ -3,9 +3,19 @@
 #include <opencv2/imgproc.hpp>
 #include <algorithm>
 #include <iostream>
+#include <map>
 
 
 enum class Color { RED, GREEN, BLUE, WHITE, YELLOW, ORANGE };
+
+std::map<Color, cv::Scalar> colorMap = {
+	{Color::RED, cv::Scalar(0, 0, 255)},
+	{Color::GREEN, cv::Scalar(0, 255, 0)},
+	{Color::BLUE, cv::Scalar(0, 0, 255)},
+	{Color::WHITE, cv::Scalar(255, 255, 255)},
+	{Color::YELLOW, cv::Scalar(0, 255, 255)},
+	{Color::ORANGE, cv::Scalar(0, 165, 255)}
+};
 
 struct Circuit {
 	Circuit(int ar, cv::Point st, cv::Point en) : area(ar), start(st), end(en) {}
@@ -18,7 +28,7 @@ struct Circuit {
 
 class Detected {
 public:
-	Detected() = default;
+	Detected(cv::Mat& imgDil_, cv::Mat& img_) : imgDil(imgDil_), img(img_) {}
 	~Detected() = default;
 
 	void Snapshot(std::string& path) {
@@ -36,12 +46,12 @@ public:
 		cap.release();
 	}
 
-	void Recognition(cv::Mat& imgDil, cv::Mat& img) {
+	void Recognition() {
 		std::vector<std::vector<cv::Point>> contours;
 		std::vector<cv::Vec4i> hierarchy;
 
 		findContours(imgDil, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
-		//drawContours(img, contours, -1, Scalar(255, 0, 255), 2);
+		//drawContours(img, contours, -1, Scalar(255, 0, 255), 2);	
 
 		std::vector<std::vector<cv::Point>> conPoly(contours.size());
 		std::vector<cv::Rect> boundRect(contours.size());
@@ -93,14 +103,35 @@ public:
 			throw "Not found";
 		}
 	}
-
-	void View(cv::Mat& imgDil, cv::Mat& img) {
+	void Color_Recognition() {
 		for (int i = index_detected; i < index_detected + 9; i++) {
-			rectangle(img, arr_detect[i].start, arr_detect[i].end, cv::Scalar(0, 255, 0), 5);
+			Circuit const& cur = arr_detect[i];
+
+			cv::Rect roi;
+			roi.x = cur.start.x;
+			roi.y = cur.start.y;
+			roi.width = cur.end.x - cur.start.x;
+			roi.height = cur.end.y - cur.start.y;
+
+			cv::Mat image_roi = img(roi);
+			cv::Scalar mean_color = cv::mean(image_roi);
+
+			std::cout << "Средний цвет BGR в квадрате: "
+				<< "(B,G,R) = (" << mean_color[0] << ", " << mean_color[1] << ", " << mean_color[2] << ")"
+				<< std::endl;
+		}
+	}
+
+	void View() {
+		for (int i = index_detected; i < index_detected + 9; i++) {
+			rectangle(img, arr_detect[i].start, arr_detect[i].end, colorMap[Color::YELLOW], 5);
 		}
 	}
 
 private:
+	cv::Mat img;
+	cv::Mat imgDil;
+
 	std::vector<Circuit> arr_detect;
 	std::vector<Color> color_cube;
 
@@ -120,17 +151,14 @@ int main() {
 	cv::Mat kernel = getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
 	dilate(imgCanny, imgDil, kernel);
 
-	Detected temp;
-	temp.Recognition(imgDil, img);
+	Detected temp(imgDil, img);
+	temp.Recognition();
 	temp.Search_square();
-	temp.View(imgDil, img);
+	temp.View();
+	temp.Color_Recognition();
 
 
 	imshow("Image", img);
-	//imshow("Image Gray", imgGray);
-	//imshow("Image Blur", imgBlur);
-	//imshow("Image Canny", imgCanny);
-	//imshow("Image Dil", imgDil);
 
 	cv::waitKey(0);
 
