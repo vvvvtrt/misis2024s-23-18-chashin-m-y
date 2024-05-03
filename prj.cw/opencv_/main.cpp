@@ -3,6 +3,7 @@
 #include <opencv2/imgproc.hpp>
 #include <algorithm>
 #include <iostream>
+#include <string>
 #include <map>
 
 
@@ -11,10 +12,19 @@ enum class Color { RED, GREEN, BLUE, WHITE, YELLOW, ORANGE };
 std::map<Color, cv::Scalar> colorMap = {
 	{Color::RED, cv::Scalar(0, 0, 255)},
 	{Color::GREEN, cv::Scalar(0, 255, 0)},
-	{Color::BLUE, cv::Scalar(0, 0, 255)},
+	{Color::BLUE, cv::Scalar(255, 0, 0)},
 	{Color::WHITE, cv::Scalar(255, 255, 255)},
 	{Color::YELLOW, cv::Scalar(0, 255, 255)},
 	{Color::ORANGE, cv::Scalar(0, 165, 255)}
+};
+
+std::map<Color, std::string> colorName = {
+	{Color::RED, "Red"},
+	{Color::GREEN, "Green"},
+	{Color::BLUE, "Blue"},
+	{Color::WHITE, "White"},
+	{Color::YELLOW, "Yellow"},
+	{Color::ORANGE, "Orange"}
 };
 
 struct Circuit {
@@ -31,26 +41,11 @@ public:
 	Detected(cv::Mat& imgDil_, cv::Mat& img_) : imgDil(imgDil_), img(img_) {}
 	~Detected() = default;
 
-	void Snapshot(std::string& path) {
-		cv::VideoCapture cap(0);
-
-		if (!cap.isOpened()) {
-			std::cerr << "Error: Could not open camera" << std::endl;
-			throw "Error: Could not open camera";
-		}
-
-		cv::Mat frame;
-		cap >> frame;
-
-		cv::imwrite(path, frame);
-		cap.release();
-	}
-
 	void Recognition() {
 		std::vector<std::vector<cv::Point>> contours;
 		std::vector<cv::Vec4i> hierarchy;
 
-		findContours(imgDil, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+		findContours(imgDil, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE);
 		//drawContours(img, contours, -1, Scalar(255, 0, 255), 2);	
 
 		std::vector<std::vector<cv::Point>> conPoly(contours.size());
@@ -64,7 +59,7 @@ public:
 			std::cout << area << std::endl;
 			std::string objectType;
 
-			if (area > 5000)
+			if (area > 3000)
 			{
 				double peri = arcLength(contours[i], true);
 				approxPolyDP(contours[i], conPoly[i], 0.02 * peri, true);
@@ -83,7 +78,7 @@ public:
 
 	}
 
-	void Search_square() {
+	void SearchSquare() {
 		std::cout << "Start " << '\n';
 		std::sort(arr_detect.begin(), arr_detect.end(), [](Circuit x, Circuit y) { return x.area < y.area; });
 
@@ -103,7 +98,34 @@ public:
 			throw "Not found";
 		}
 	}
-	void Color_Recognition() {
+
+
+	Color GetNearestColor(cv::Scalar const& color)
+	{
+		Color nearest_color = Color::RED;
+		double min_distance = std::numeric_limits<double>::max();
+
+		for (auto const& pair : colorMap)
+		{
+			double distance =
+				sqrt(
+					pow(pair.second[2] - color[2], 2) +
+					pow(pair.second[1] - color[1], 2) +
+					pow(pair.second[0] - color[0], 2)
+				);
+
+			if (distance < min_distance)
+			{
+				min_distance = distance;
+				nearest_color = pair.first;
+			}
+		}
+
+		return nearest_color;
+	}
+
+
+	void FillColors() {
 		for (int i = index_detected; i < index_detected + 9; i++) {
 			Circuit const& cur = arr_detect[i];
 
@@ -116,15 +138,14 @@ public:
 			cv::Mat image_roi = img(roi);
 			cv::Scalar mean_color = cv::mean(image_roi);
 
-			std::cout << "Средний цвет BGR в квадрате: "
-				<< "(B,G,R) = (" << mean_color[0] << ", " << mean_color[1] << ", " << mean_color[2] << ")"
-				<< std::endl;
+			color_cube.push_back(GetNearestColor(mean_color));
 		}
 	}
 
 	void View() {
 		for (int i = index_detected; i < index_detected + 9; i++) {
-			rectangle(img, arr_detect[i].start, arr_detect[i].end, colorMap[Color::YELLOW], 5);
+			rectangle(img, arr_detect[i].start, arr_detect[i].end, colorMap[color_cube[i - index_detected]], 5);
+			putText(img, colorName[color_cube[i - index_detected]], { arr_detect[i].start.x, arr_detect[i].start.y - 5 }, cv::FONT_HERSHEY_PLAIN, 1, cv::Scalar(0, 69, 255), 2);
 		}
 	}
 
@@ -139,8 +160,27 @@ private:
 };
 
 
+void Snapshot(std::string& path) {
+	cv::VideoCapture cap(0);
+
+	if (!cap.isOpened()) {
+		std::cerr << "Error: Could not open camera" << std::endl;
+		throw "Error: Could not open camera";
+	}
+
+	cv::Mat frame;
+	cap >> frame;
+
+	cv::imwrite(path, frame);
+	cap.release();
+}
+
+
+
 int main() {
-	std::string path = "Resources/test.jpg";
+	std::string path = "Resources/test4.jpg";
+	//Snapshot(path);
+
 	cv::Mat img = cv::imread(path);
 	cv::Mat imgGray, imgBlur, imgCanny, imgDil, imgErode;
 
@@ -153,12 +193,12 @@ int main() {
 
 	Detected temp(imgDil, img);
 	temp.Recognition();
-	temp.Search_square();
+	temp.SearchSquare();
+	temp.FillColors();
 	temp.View();
-	temp.Color_Recognition();
-
 
 	imshow("Image", img);
+	//imshow("Image2", equalizedImage);
 
 	cv::waitKey(0);
 
