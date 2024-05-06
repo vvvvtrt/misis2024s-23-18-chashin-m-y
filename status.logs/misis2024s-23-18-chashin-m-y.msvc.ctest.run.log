@@ -29,25 +29,7 @@ Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/d
       Start  9: doctest_dynarr
       Start 10: doctest_dynarr_m
       Start 11: doctest_queuearr
-Could not find executable D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe
-Looked in the following places:
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuearr.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuearr.exe.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr.exe.exe
- 3/20 Test #11: doctest_queuearr .................***Not Run   0.00 sec
       Start 12: doctest_queuearr_m
-Could not find executable D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe
-Looked in the following places:
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuearr_m.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuearr_m.exe.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuearr_m.exe.exe
- 4/20 Test #12: doctest_queuearr_m ...............***Not Run   0.00 sec
       Start 13: doctest_queuelst
 Could not find executable D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelst.exe
 Looked in the following places:
@@ -57,73 +39,37 @@ D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/d
 D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelst.exe.exe
 Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelst.exe
 Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelst.exe.exe
- 5/20 Test #13: doctest_queuelst .................***Not Run   0.00 sec
+ 3/20 Test #13: doctest_queuelst .................***Not Run   0.00 sec
       Start 14: doctest_queuelst_m
       Start 15: doctest_queuelstpr
-Could not find executable D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe
-Looked in the following places:
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelstpr.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelstpr.exe.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr.exe.exe
- 6/20 Test #15: doctest_queuelstpr ...............***Not Run   0.00 sec
       Start 16: doctest_queuelstpr_m
-Could not find executable D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe
-Looked in the following places:
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelstpr_m.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_queuelstpr_m.exe.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_queuelstpr_m.exe.exe
- 7/20 Test #16: doctest_queuelstpr_m .............***Not Run   0.00 sec
       Start 17: doctest_stackarr
-Could not find executable D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe
-Looked in the following places:
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_stackarr.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_stackarr.exe.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stackarr.exe.exe
- 8/20 Test #17: doctest_stackarr .................***Not Run   0.00 sec
       Start 18: doctest_stackarr_m
+ 4/20 Test  #3: doctest_complex ..................   Passed    0.05 sec
       Start 19: doctest_stacklst
-Could not find executable D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe
-Looked in the following places:
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_stacklst.exe
-D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/Release/doctest_stacklst.exe.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe
-Release/D:/projects/misis2023f-23-check/misis2024s-23-18-chashin-m-y/bin.check/doctest_stacklst.exe.exe
- 9/20 Test #19: doctest_stacklst .................***Not Run   0.00 sec
+ 5/20 Test  #4: doctest_complex_io ...............   Passed    0.05 sec
       Start 20: doctest_stacklst_m
-10/20 Test  #3: doctest_complex ..................   Passed    0.04 sec
-11/20 Test  #4: doctest_complex_io ...............   Passed    0.03 sec
-12/20 Test  #5: doctest_complex_m ................   Passed    0.03 sec
-13/20 Test  #6: doctest_rational .................   Passed    0.03 sec
-14/20 Test  #7: doctest_rational_io ..............   Passed    0.03 sec
-15/20 Test  #8: doctest_rational_m ...............   Passed    0.03 sec
-16/20 Test  #9: doctest_dynarr ...................   Passed    0.02 sec
-17/20 Test #10: doctest_dynarr_m .................   Passed    0.02 sec
-18/20 Test #14: doctest_queuelst_m ...............   Passed    0.02 sec
-19/20 Test #18: doctest_stackarr_m ...............   Passed    0.01 sec
+ 6/20 Test  #5: doctest_complex_m ................   Passed    0.05 sec
+ 7/20 Test  #6: doctest_rational .................   Passed    0.04 sec
+ 8/20 Test  #7: doctest_rational_io ..............   Passed    0.04 sec
+ 9/20 Test  #8: doctest_rational_m ...............   Passed    0.04 sec
+10/20 Test  #9: doctest_dynarr ...................   Passed    0.04 sec
+11/20 Test #10: doctest_dynarr_m .................   Passed    0.04 sec
+12/20 Test #11: doctest_queuearr .................   Passed    0.03 sec
+13/20 Test #12: doctest_queuearr_m ...............   Passed    0.03 sec
+14/20 Test #15: doctest_queuelstpr ...............   Passed    0.02 sec
+15/20 Test #14: doctest_queuelst_m ...............   Passed    0.03 sec
+16/20 Test #16: doctest_queuelstpr_m .............   Passed    0.02 sec
+17/20 Test #17: doctest_stackarr .................   Passed    0.02 sec
+18/20 Test #18: doctest_stackarr_m ...............   Passed    0.01 sec
+19/20 Test #19: doctest_stacklst .................   Passed    0.01 sec
 20/20 Test #20: doctest_stacklst_m ...............   Passed    0.01 sec
 
-55% tests passed, 9 tests failed out of 20
+85% tests passed, 3 tests failed out of 20
 
-Total Test time (real) =   0.05 sec
+Total Test time (real) =   0.08 sec
 
 The following tests FAILED:
 	  1 - doctest_bitset (Not Run)
 	  2 - doctest_bitset_m (Not Run)
-	 11 - doctest_queuearr (Not Run)
-	 12 - doctest_queuearr_m (Not Run)
 	 13 - doctest_queuelst (Not Run)
-	 15 - doctest_queuelstpr (Not Run)
-	 16 - doctest_queuelstpr_m (Not Run)
-	 17 - doctest_stackarr (Not Run)
-	 19 - doctest_stacklst (Not Run)
