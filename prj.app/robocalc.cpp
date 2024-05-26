@@ -41,33 +41,31 @@ class DIV : public Base {
 
 
 
-void Execute(std::vector<std::string> command) {
+void Execute(double& ans, std::vector<std::string> command) {
+    for (std::string s : command){
+        std::istringstream iss(s);
+        std::string _command;
+        double _number;
 
-    std::istringstream iss(command);
-    std::string _command;
-    double _number;
+        iss >> _command >> _number;
 
-    iss >> _command >> _number;
+        Base* cmd;
 
-    Base* cmd;
+        if (_command == "ADD") {
+            cmd = new ADD();
+        } else if (_command == "MUL") {
+            cmd = new MUL();
+        } else if (_command == "SUB") {
+            cmd = new SUB();
+        } else if (_command == "DIV") {
+            cmd = new DIV();
+        } else {
+            return;
+        }
 
-    if (_command == "ADD") {
-        cmd = new ADD();
-    } else if (_command == "MUL") {
-        cmd = new MUL();
-    } else if (_command == "SUB") {
-        cmd = new SUB();
-    } else if (_command == "DIV") {
-        cmd = new DIV();
-    } else if (_command == "OUT") {
-        std::cout << ans << std::endl;
-        return;
-    } else {
-        return;
+        cmd->operation(ans, _number);
+        delete cmd;
     }
-
-    cmd->operation(ans, _number);
-    delete cmd;
 }
 
 
@@ -91,7 +89,8 @@ int main() {
         iss >> _command >> _number;
 
         if (_command == "OUT"){
-            Execute(line, __number);
+            Execute(_number, command);
+            std::cout << _number << "\n";
         }
 
     }
