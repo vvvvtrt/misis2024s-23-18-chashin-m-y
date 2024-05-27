@@ -138,6 +138,7 @@ public:
 			cv::Mat image_roi = img(roi);
 			cv::Scalar mean_color = cv::mean(image_roi);
 
+			mean_bgr.push_back(mean_color);
 			color_cube.push_back(GetNearestColor(mean_color));
 		}
 	}
@@ -149,11 +150,16 @@ public:
 		}
 	}
 
+	std::vector<cv::Scalar> ReturnBgr() {
+		return mean_bgr;
+	}
+
 private:
 	cv::Mat img;
 	cv::Mat imgDil;
 
 	std::vector<Circuit> arr_detect;
+	std::vector<cv::Scalar> mean_bgr;
 	std::vector<Color> color_cube;
 
 	int index_detected;
