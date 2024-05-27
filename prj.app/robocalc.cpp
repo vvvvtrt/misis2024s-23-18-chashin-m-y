@@ -3,71 +3,53 @@
 #include <string>
 #include <sstream>
 #include <vector>
-
+#include <memory> // ƒобавлен заголовок дл€ использовани€ std::unique_ptr
 
 class Base {
 public:
-    virtual void operation(double& l, double& r) {}
+    Base(double r) : r_value(r) {}
+    virtual ~Base() = default; 
+
+    virtual void operation(double& l) {} 
+
+protected:
+    double r_value;
 };
 
-
 class ADD : public Base {
-    void operation(double& l, double& r) override{
-        l = l + r;
+public:
+    ADD(double r) : Base(r) {}
+    void operation(double& l) override {
+        l = l + r_value;
     }
 };
 
 class MUL : public Base {
-    void operation(double& l, double& r) override {
-        l = l - r;
+public:
+    MUL(double r) : Base(r) {}
+    void operation(double& l) override {
+        l = l * r_value;
     }
 };
 
 class SUB : public Base {
-    void operation(double& l, double& r) override {
-        l = l * r;
+public:
+    SUB(double r) : Base(r) {}
+    void operation(double& l) override {
+        l = l - r_value;
     }
 };
 
 class DIV : public Base {
-    void operation(double& l, double& r) override {
-        if (r == 0) {
-            throw "r value zero";
+public:
+    DIV(double r) : Base(r) {}
+    void operation(double& l) override {
+        if (r_value == 0) {
+            throw std::runtime_error("r value zero"); 
         }
-
-        l = l / r;
+        l = l / r_value;
     }
 };
-
-
-
-void Execute(double& ans, std::vector<std::string> command) {
-    for (std::string s : command){
-        std::istringstream iss(s);
-        std::string _command;
-        double _number;
-
-        iss >> _command >> _number;
-
-        Base* cmd;
-
-        if (_command == "ADD") {
-            cmd = new ADD();
-        } else if (_command == "MUL") {
-            cmd = new MUL();
-        } else if (_command == "SUB") {
-            cmd = new SUB();
-        } else if (_command == "DIV") {
-            cmd = new DIV();
-        } else {
-            return;
-        }
-
-        cmd->operation(ans, _number);
-        delete cmd;
-    }
-}
-
 
 int main() {
     std::ifstream file("command.txt");
@@ -78,24 +60,41 @@ int main() {
     }
 
     std::string line;
-    std::vector<std::string> command;
+    std::vector<std::unique_ptr<Base>> command2;
 
-    while (std::getline(file, line))
-    {
+    while (std::getline(file, line)) {
         std::istringstream iss(line);
         std::string _command;
         double _number;
 
         iss >> _command >> _number;
 
-        if (_command == "OUT"){
-            Execute(_number, command);
+        if (_command == "OUT") {
+            for (const auto& temp : command2) { 
+                temp->operation(_number);
+            }
+            std::cout << _number << "\n";
+        }
+        else if (_command == "REV") {
+            for (int i = 0; i < _number && command2.size() > 0; i++) {
+                command2.pop_back();
+            }
             std::cout << _number << "\n";
         }
         else {
-            command.push_back(line);
+            if (_command == "ADD") { 
+                command2.push_back(std::make_unique<ADD>(_number)); 
+            }
+            else if (_command == "MUL") { 
+                command2.push_back(std::make_unique<MUL>(_number)); 
+            }
+            else if (_command == "SUB") { 
+                command2.push_back(std::make_unique<SUB>(_number)); 
+            }
+            else if (_command == "DIV") { 
+                command2.push_back(std::make_unique<DIV>(_number)); 
+            }
         }
-
     }
 
     file.close();
