@@ -79,7 +79,6 @@ int main() {
             for (int i = 0; i < _number && command2.size() > 0; i++) {
                 command2.pop_back();
             }
-            std::cout << _number << "\n";
         }
         else {
             if (_command == "ADD") { 

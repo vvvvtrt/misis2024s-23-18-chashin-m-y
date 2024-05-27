@@ -6,3 +6,5 @@ SUB 2
 OUT 1
 DIV 8
 OUT 1
+REV 2
+OUT 1
