@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+!prj.app
 
 .vs
 .out

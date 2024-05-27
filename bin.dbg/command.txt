@@ -1,0 +1,8 @@
+ADD 1
+MUL 2
+ADD 5
+OUT 1
+SUB 2
+OUT 1
+DIV 8
+OUT 1

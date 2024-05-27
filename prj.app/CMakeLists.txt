@@ -1,1 +1,1 @@
-
+add_executable(robocalc "robocalc.cpp")
