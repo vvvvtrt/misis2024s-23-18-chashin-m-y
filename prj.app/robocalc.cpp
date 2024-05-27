@@ -92,6 +92,9 @@ int main() {
             Execute(_number, command);
             std::cout << _number << "\n";
         }
+        else {
+            command.push_back(line);
+        }
 
     }
 
