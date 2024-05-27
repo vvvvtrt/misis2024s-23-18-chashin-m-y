@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include <memory> // ƒобавлен заголовок дл€ использовани€ std::unique_ptr
+#include <memory> 
 
 class Base {
 public:
